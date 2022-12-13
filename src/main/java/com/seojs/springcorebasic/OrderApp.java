@@ -8,10 +8,12 @@ import com.seojs.springcorebasic.order.Order;
 import com.seojs.springcorebasic.order.OrderService;
 import com.seojs.springcorebasic.order.OrderServiceImpl;
 
-public class OrderApp {
+public class    OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
