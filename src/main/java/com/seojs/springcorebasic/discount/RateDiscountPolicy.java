@@ -1,14 +1,17 @@
 package com.seojs.springcorebasic.discount;
 
+import com.seojs.springcorebasic.annotation.MainDiscountPolicy;
 import com.seojs.springcorebasic.member.Grade;
 import com.seojs.springcorebasic.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;
-
 
     @Override
     public int discount(Member member, int price) {
